@@ -3,6 +3,31 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<p> 
+<label>請選擇圖片：</label> 
+<input type="file" id="file_input" accept="image/jpeg, image/png"/> 
+</p> 
+<div id="result"></div>
+ 
+<script language="javascript">
+var result = document.getElementById("result"); 
+var input = document.getElementById("file_input"); 
+
+if(typeof FileReader==='undefined'){ 
+result.innerHTML = "Sorry, 瀏覽器不支持 FileReader"; 
+input.setAttribute('disabled','disabled'); 
+}else{ 
+input.addEventListener('change',readFile,false);
+}
+function readFile(){ 
+var file = this.files[0]; 
+var reader = new FileReader(); 
+reader.readAsDataURL(file); 
+reader.onload = function(e){ 
+result.innerHTML = '<img src="'+this.result+'" alt="" height="100" />' 
+} 
+}
+</script>
 </head>
 <title>With My Life</title>
 <body>
