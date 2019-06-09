@@ -15,9 +15,27 @@
                 <!-- <li class="content-img-list-item"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""><a class="delete-btn"><i class="ico-delete"></i></a></li> -->
             </ul>
             <div class="file">
-                <i class="ico-plus"></i>上传图片，支持jpg/png<input type="file" name="file" accept="image/*" id="upload" >
+                <i class="ico-plus"></i>上傳圖片，支持jpg/png<input type="file" name="file" accept="image/*" id="upload" >
             </div>  
         </div>
+var fileList = this.files;
+        for(var i = 0; i < fileList.length; i++) {
+            var imgSrcI = getObjectURL(fileList[i]);
+            imgName.push(fileList[i].name);
+            imgSrc.push(imgSrcI);
+            imgFile.push(fileList[i]);
+        }
+function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
 var formFile = new FormData();
 $.each(imgFile, function(i, file){
             formFile.append('myFile[]', file);
