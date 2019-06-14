@@ -90,7 +90,7 @@
                     <div class="form-group">
                         <div id="btcheck"></div>
                     </div>
-                    <input type="submit" class="btn btn-success" value="Post My Message" disabled="disabled" />
+                    <input type="submit"  value="Post My Message" />
                 </form>
 
             </div>
@@ -105,20 +105,7 @@
            
         </div>
 
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
-        <script type="text/javascript">
-        function verifyCallback(response) {
-            $('input[name="btcheck"]').val(response);
-            $('input[type="submit"]').removeAttr('disabled');
-        }
-        var onloadCallback = function() {
-            grecaptcha.render('btcheck', {
-                'sitekey' : '6Lf3xwgTAAAAAPA5yQmODTM5EMlkOgUkTKh2dRbL',
-                'callback' : verifyCallback,
-                'theme' : 'light'
-            });
-        }
-        </script>
+       
 
     </body>
 </html>
