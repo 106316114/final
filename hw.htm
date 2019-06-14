@@ -10,42 +10,18 @@
 <body>
 
 <div style="text-align:center;"><h1><font face="fantasy">With My Life</font></h1></div>
+<img id="output" height="200" style="display:none">
+ <input type="file" onchange="openFile(event)">
+ function openFile(event){
+  var input = event.target; //取得上傳檔案
+  var reader = new FileReader(); //建立FileReader物件
 
- 
-<form>
-    <input type='file' class="upl">
-    <div>
-        <img class="preview" style="max-width: 150px; max-height: 150px;">
-        <div class="size"></div>
-    </div>
-</form>
-$(function (){
- 
-    function format_float(num, pos)
-    {
-        var size = Math.pow(10, pos);
-        return Math.round(num * size) / size;
-    }
- 
-    function preview(input) {
- 
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function (e) {
-                $('.preview').attr('src', e.target.result);
-                var KB = format_float(e.total / 1024, 2);
-                $('.size').text("檔案大小：" + KB + " KB");
-            }
- 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
- 
-    $("body").on("change", ".upl", function (){
-        preview(this);
-    })
-    
-})
+  reader.readAsDataURL(input.files[0]); //以.readAsDataURL將上傳檔案轉換為base64字串
+
+  reader.onload = function(){ //FileReader取得上傳檔案後執行以下內容
+    var dataURL = reader.result; //設定變數dataURL為上傳圖檔的base64字串
+    $('#output').attr('src', dataURL).show(); //將img的src設定為dataURL並顯示
+  };
+}
 </body>
 </html> 
