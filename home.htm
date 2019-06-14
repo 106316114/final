@@ -13,6 +13,961 @@
         <div class="size"></div>
     </div>
 </form>
+/* 
+   Copyright © CSS designed by Wei @ Dribs & Drabs, http://www.dribs-drabs.com/blog
+
+   主要色碼: #fc3a63(桃紅)
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 清空 */
+#comment-form table{    
+	margin: 0 auto ;
+}
+#comment-form td , #comment-form th{
+    border: 0px solid #000 ;
+    padding: 0px 0px;    
+}
+#comment-form input#send-comment{
+    padding: 0px 0px ;    
+}
+
+.article-content p{
+	margin-bottom:1em;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+        margin:0;
+        padding:0;
+}
+table {
+        border-collapse:collapse;
+        border-spacing:0;
+}
+fieldset,img {
+        border:0;
+}
+address,caption,cite,code,dfn,em,th,var {
+        font-style:normal;
+        font-weight:normal;
+}
+ol,ul {
+        list-style:none;
+}
+caption,th {
+        text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+        font-size: 100%;
+        font-weight:normal;
+}
+q:before,q:after {
+        content:'';
+}
+abbr,acronym {
+        border:0;
+}
+pre{
+        font-size: 1em ;
+}
+.article-content{
+	_height: 1% ;
+	overflow: hidden ;
+	_overflow: none;
+}
+a{
+	color:#000000;
+	text-decoration:none ;
+}
+a:hover{
+	text-decoration:none ;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 部落格前置設定 */
+body{
+	min-width: 1000px;
+	font-size: 11pt ;
+	font-family: "Century Gothic" ;
+}
+#container{
+	margin: 0px auto;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 部落格資訊 */
+#header{
+	width: 100%;
+	height: 110px;
+	background: #ffffff;
+	z-index: 9;
+	border-bottom: 3px solid #000;
+	position: relative;
+}
+#banner{
+	width: 938px;
+	margin: 0 auto;
+}
+#banner h1{
+	padding: 20px 0px 0px 0px;
+	display: inline-block;
+}
+#banner h1 a{
+	font-size: 35px;
+}
+#banner h1 a:hover{
+	color: #fc3a63;
+}
+#banner h2{
+	display: inline-block;
+	color: #aaa;
+	padding: 0px 0px 5px 10px;
+}
+/*--四個連結: 部落格、相簿、名片、留言--*/
+#navigation{
+	width: 220px;
+	position: absolute;
+	top: 70px;
+	right: 50%;
+	margin-right: -496px;
+	padding-left: 20px;
+	border-left: 1px #aaa dotted;
+}
+#navigation li{
+	display: inline-block;
+}
+#navigation a{
+	color: #999;
+}
+#navigation a:hover{
+	color: #fc3a63;
+}
+#navigation li{
+	padding: 7px;
+}
+#banner .skiplink{display: none;}
+#blog-category{display: none;}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 主要內文 */
+#main{
+	width: 958px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+/*-----------------------------------公告區塊*/
+#spotlight{
+	padding: 15px 0;
+	width: 938px;
+	margin: 0 auto;
+	line-height: 150%;
+	margin-bottom: 10px;
+	border-bottom: #999 1px dotted;
+}
+#blog-main #spotlight{
+	border-bottom: #999 0px dotted;
+}
+#spotlight h5{
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+#spotlight-text{
+	color: #999;
+}
+/*-----------------------------------文章區塊*/
+#article-area{
+	width: 968px;
+	margin: 0 auto;
+	overflow : hidden;
+}
+.article{
+	float: left;
+	width: 190px;
+	height: 190px;
+	padding: 10px;
+	background: #ffffff;
+	box-shadow: 0px 0px 1px 1px #ddd;
+	-moz-box-shadow: 0px 0px 1px 1px #ddd;
+	-webkit-box-shadow: 0px 0px 1px 1px #ddd;
+	margin: 15px 15px 40px 15px;
+}
+.article:hover{
+	box-shadow: 0px 0px 1px 1px #bbb;
+	-moz-box-shadow: 0px 0px 1px 1px #bbb;
+	-webkit-box-shadow: 0px 0px 1px 1px #bbb;
+	background: #f7f7f7;
+}
+.publish{display: none;}
+.title h2{
+	top: 207px;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+.title h2 a{
+	color: #999;
+}
+.article:hover .title h2 a{
+	color: #444;
+}
+.article-content{
+	top: -40px;
+	height: 170px;
+	padding: 10px;
+	text-align: left;
+	position: relative;
+	line-height: 200%;
+	background: #dcdddd;
+}
+#blog-main .article-content img{
+	width: auto;
+	height: 190px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#category-main .article-content img{
+	width: auto;
+	height: 190px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.article .more a{
+	font-size: 0px;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 190px;
+	height: 190px;
+	z-index: 10;
+}
+.author{display: none;}
+.forward{display: none;}
+.article-footer{display: none;}
+.refer{display: none;}
+.history{display: none;}
+.back-to-top{display: none;}
+.article-keyword{display: none;}
+
+/*-----------------------------------頁數*/
+.page{
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin: 30px 0px 30px 0px;
+}
+.page span{
+	padding: 5px;
+	color: #999;
+}
+.page a{
+	padding: 5px;
+	color: #000;
+}
+.page a:hover{
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 文章區塊 */
+/*--單一篇文章--*/
+#article-main .article{
+	width: 940px;
+	height: auto;
+	padding: 10px 0px 30px 0px;
+	background: none;
+	float: none;
+	margin: 0 auto;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-bottom: 3px solid #000;
+}
+#article-main .publish{
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0px 10px 15px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+}
+#article-main .title h2{
+	text-align: left;
+	position: static;
+	height: auto;
+	background: none;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0px 0px 20px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+}
+#article-main .title a{
+	color: #000;
+}
+#article-main .article-content{
+	height: auto;
+	font-size: 12px;
+	position: static;
+	text-align: left;
+	padding: 0px;
+	margin-bottom: 20px; 
+	background: none;
+}
+#article-main .article-content img{
+	max-width: 940px;
+}
+#article-main .article-content a{
+	color: #fc3a63;
+}
+.bookmark{
+	padding-bottom: 15px;
+}
+#article-main .article-keyword{
+	display: block;
+}
+#article-main .author{
+	display: block;
+	padding: 0px 0px 5px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+}
+#article-main .article-footer{
+	display: block;
+}
+#article-main .refer{
+	display: block;
+}
+#article-main .refer li{
+	padding: 0px 0px 5px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+
+}
+#article-main .history{
+	display: block;
+	padding: 0px 0px 5px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+}
+#article-main .back-to-top{
+	display: block;
+	padding: 0px 0px 5px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) left 2px no-repeat;
+}
+#pixblogad{display:none;}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 分類/列表模式 */
+.article-area-title{
+	width: 940px;
+	margin: 0 auto;
+	padding: 15px 0px 5px 0px;
+	font-weight: bold;
+}
+#display{
+	width: 940px;
+	margin: 0 auto;
+	padding: 5px 0px 15px 0px;
+	font-weight: bold;
+}
+#display a{
+	padding: 0px 10px 0px 15px;
+	background: url(http://pic.pimg.tw/weilife/1381045870-1786288759.png) top left no-repeat;
+}
+.main-list table{
+	width: 940px;
+	margin: 0 auto;
+}
+.main-list td.list-date{
+	width: 100px;
+}
+.main-list td.list-title{
+	width: 680px;
+}
+.main-list td.list-visit{
+	width: 80px;
+	text-align: center;
+}
+.main-list th.list-visit{
+	text-align: center;
+}
+.main-list td.list-comment{
+	width: 80px;
+	text-align: center;
+}
+.main-list th.list-comment{
+	text-align: center;
+}
+.main-list tr:hover{
+	background:#eee;
+}
+.main-list th{
+	color:#000000;
+	padding:10px 0;
+	border:0px;
+	text-align: left;
+	border-bottom: 1px dotted #aaa;
+}
+.main-list td{
+	border:0px;
+	padding:10px 0;
+	border-bottom: 1px dotted #aaa;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 留言區塊 */
+/*--僅引用區塊--*/
+#trackback-box{display: none;}
+/*--引用列表標題--*/
+#trackback-title{}
+/*--引用內容區塊--*/
+#trackback-text{}
+/*--單一引用--*/
+#trackback-box .single-post{}
+
+
+/*--引用及回應列表全部的大範圍--*/
+#user-post{
+	margin-top: 3px;
+	padding: 16px;
+}
+#comment-title{
+	padding: 10px 0px 10px 25px;
+	background: url(http://pic.pimg.tw/weilife/1390024476-1925841079.png)  0px 6px no-repeat;
+	text-align: left;
+}
+.post-comment{
+	padding: 2px 0px 20px 25px;
+	background: url(http://pic.pimg.tw/weilife/1390024476-3525513496.png)  0px top no-repeat;
+	border-bottom: dotted #aaa 1px;
+}
+
+/*--單一引用+單一回應--*/
+.single-post{
+	padding: 20px;
+	min-height: 55px;
+	-webkit-transition: background 0.5s ease-out;
+	-moz-transition: background 0.5s ease-out;
+	-o-transition: background 0.5s ease-out;
+	transition: background 0.5s ease-out;
+	border-bottom: dotted #aaa 1px;
+	position: relative;
+}
+.single-post:hover{
+	background: #efefef;
+}
+.secret{
+	min-height: 0px;
+}
+.secret li:before{
+	content: "- ";
+	padding-right: 5px;
+}
+.secret li:after{
+	content: "- ";
+	padding-left: 5px;
+}
+.secret li{
+	padding: 0px;
+}
+.post-info{
+	font-weight: bold;
+	height: 20px;
+}
+.post-info a:hover{
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+.post-info .floor{
+	display: block;
+	width: 50px;
+	position: absolute;
+	top: 65px;
+	right: 10px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+}
+.post-photo{
+	text-align: right;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.post-photo img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.post-text{
+	padding: 0px 80px 10px 0px;
+	line-height: 150%;
+}
+.reply-text{
+	color: #888;
+	padding: 0px 80px 0px 10px;
+	line-height: 150%;
+	border-left: #888 solid 5px;
+}
+.reply-text p{
+	padding-top: 10px;
+	padding-bottom: 2px;
+}
+.reply-text a{
+	color: #888;
+}
+.reply-text a:hover{
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+/*--------------------.post-info icon--------------*/
+.post-info .user-name a{
+	margin: 0 5px 0px 0px;
+}
+.post-info .user-name img{
+	display: none;
+}
+.post-info .homepage{
+	background: url(http://pic.pimg.tw/weilife/1381045870-1646743796.png) center center no-repeat;
+}
+.post-info .homepage img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.post-info .hide-message{
+	background: url(http://pic.pimg.tw/weilife/1381045870-893869105.png) center center no-repeat;
+}
+.post-info .hide-message img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.post-info .show-message{
+	background: url(http://pic.pimg.tw/weilife/1381045870-1392687776.png) center center no-repeat;
+}
+.post-info .show-message img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.post-info .delete-message{
+	background: url(http://pic.pimg.tw/weilife/1381045869-3234832763.png) center center no-repeat;
+}
+.post-info .delete-message img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.post-info .spam-message{
+	background: url(http://pic.pimg.tw/weilife/1381045869-3826508189.png) center center no-repeat;
+}
+.post-info .spam-message img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.post-info .reply-message{
+	background: url(http://pic.pimg.tw/weilife/1381045870-4208701959.png) center center no-repeat;
+}
+.post-info .reply-message img{
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;	
+}
+.reply-text .comment-icon{
+	display: none;
+}
+
+
+
+/*--------------------撰寫留言區--------------*/
+#container #main #content #user-post #comment-box #comment-area {
+	width: 940px;
+	padding: 0px;
+}
+#container #main #content #user-post #comment-box #comment-area-2 {
+	width: 900px;
+background: #e6e6e6;	
+	padding: 20px;
+	border: 0px;
+}
+#container #main #content #user-post #comment-box #comment-area iframe{
+	position: absolute ;
+	top:20px;
+	right: 20px;
+	float:right;
+}
+#container #main #content #user-post #comment-box .comment-identity{
+	width: 900px;
+	background:url(http://pic.pimg.tw/weilife/1368612429-2456652207.png) repeat-x bottom left;
+	border: 0px;
+	padding: 0px;
+	padding-bottom: 5px;
+}
+#container #main #content #user-post #comment-box .identity-login img.photo{
+	border: 0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#container #main #content #user-post #comment-box .comment-body{
+	border: 0px;
+	padding: 0px;
+}
+#container #main #content #user-post #comment-box input.comment-name{
+	background: #F2F2F2;
+	width: 900px;
+	border: 0px;
+	padding: 5px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+#container #main #content #user-post #comment-box .comment-textarea{
+	background: #F2F2F2;
+	width: 900px;
+	border: 0px;
+	padding: 0px;
+	padding-bottom: 2px;
+	margin: 0px;
+	margin-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#container #main #content #user-post #comment-box .comment-textarea textarea{
+	background: #F2F2F2;
+	width: 890px;
+	padding: 5px;
+	margin-bottom:5px;
+}
+#container #main #content #user-post #comment-box .captcha{
+	background: #F2F2F2;
+	width: 900px;
+	border: 0px;
+	padding: 0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#container #main #content #user-post #comment-box .captcha div{
+	position: absolute;
+	top:5px;
+	left: 210px;
+}
+#container #main #content #user-post #comment-box .captcha input{
+	width: 540px;
+	height: 25px;
+	border: 0px;
+	position: absolute;
+	top:0px;
+	left: 120px;
+}
+#container #main #content #user-post #comment-box a.reload-captcha{
+	position: absolute;
+	top:22px;
+	left:0px;
+	background: url(http://pic.pimg.tw/weilife/1368619771-4138190912.png) no-repeat right 4px;
+}
+#container #main #content #user-post #comment-box a.reload-captcha:hover{
+	position: absolute;
+	top:22px;
+	left:0px;
+	background:url(http://pic.pimg.tw/weilife/1368619770-3632605094.png) no-repeat right 4px;
+	color: #000000
+}
+#container #main #content #user-post #comment-box .comment-extra{
+	background:url(http://pic.pimg.tw/weilife/1368612429-2456652207.png) repeat-x top left;
+	margin: 0px;
+	margin-top: 10px;
+	padding: 0px;
+	padding-top: 10px;
+}
+#container #main #content #user-post #comment-box #comment-area button{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #F2F2F2;
+	border: 0px;
+}
+#container #main #content #user-post #comment-box .extra{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #F2F2F2;
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0px;
+	margin-top: 10px;
+	border: 0px;
+}
+#container #main #content #user-post #comment-box .extra input {
+	width: 420px;
+	background: #F2F2F2;
+	border: 0px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 側欄 */
+#links{}
+.box-title img{display: none;}
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 側欄1 */
+#links-row-1{
+	left: -225px;
+	top: 110px;
+	width: 250px;
+	color: #aaa;
+	position: absolute;
+	background: #000;
+	-webkit-transition: left 0.5s ease-out;
+	-moz-transition: left 0.5s ease-out;
+	-o-transition: left 0.5s ease-out;
+	transition: left 0.5s ease-out;
+	display: none;
+}
+#links-row-1:hover{
+	left: 0px;
+}
+#links-row-1 a{
+	color: #ffffff;
+}
+#links-row-1 .box{
+	width: 205px;
+	padding: 10px;
+	border-top: #999 1px dotted;
+}
+#links-row-1 .box-text{
+	padding: 5px 0px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 側欄2 */
+#links-row-2{
+	position: absolute;
+	top: 128px;
+	padding-left: 15px;
+	width: 750px;
+	z-index: 10;
+}
+#links-row-2 .box{
+	z-index: 11;
+	padding: 0px;
+	display: inline-block;
+}
+#links-row-2 .box-title{
+	padding: 0px 20px 15px 0px;
+}
+#links-row-2 .box:hover .box-title{
+	color: #fc3a63;
+}
+#links-row-2 .box-text{
+	position: absolute;
+	padding: 15px 15px 20px 15px;
+	min-width: 200px;
+	background: #eee;
+	border-top: 3px solid #fc3a63;
+	display: none;
+}
+#links-row-2 .box:hover .box-text{
+	display: block;
+}
+#links-row-2 .box-text a{
+	color: #fc3a63;
+}
+#links-row-2 .box-text li{
+	display: block;
+	padding: 7px 7px 7px 22px;
+	background: url(http://pic.pimg.tw/weilife/1384069895-3008229311.png) left 7px no-repeat;
+	border-bottom: 1px dotted #aaa;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 側欄元件定義 */
+/*--搜尋--*/
+#search li{
+	background: none !important;
+	padding: 5px !important;
+	border: 0px !important;
+}
+#search-target{
+	width: 100%;
+	border: 0px;
+	background: #ffffff;
+}
+#search-submit{
+	width: 100%;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+
+
+/*-日曆-*/
+#calendar .box-title{}
+#calendar .box-text {}
+#calendar{}
+#calendar table{
+	width:100%;
+}
+#calendar th,
+#calendar td{
+	text-align:center;
+	padding:1px;
+}
+#calendar td a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background:#fc3a63;
+	color: #ffffff;
+	display:block;
+}
+
+/*--文章彙整--*/
+#archive {}
+#archive .box-title{}
+#archive .box-text{}
+#archive .box-text select{}
+#archive .box-more{
+	padding: 10px 7px 7px 22px;
+	background: url(http://pic.pimg.tw/weilife/1384069895-3008229311.png) left 10px no-repeat;
+}
+
+/*-個人資訊-*/
+#user-info .box-title{}
+#user-info .box-text {}
+#user-info{}
+#user-info dt{}
+#user-info dl dd {}
+#user-info .user-img {
+	margin-bottom:5px;
+	width: 95px;
+}
+#user-info .user-img img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:0px;
+	border:0px;
+	margin-bottom:5px;
+}
+
+
+
+/*-訪客列表-*/
+#visitor{}
+#visitor .box-text{}
+#visitor .box-text ul:after {
+	content: " ";
+	display: block;
+	height: 0px;
+	clear: both;
+	overflow: hidden;
+}
+#visitor .box-text li {
+	float: left;
+	padding:5px;
+	background: none;
+}
+#visitor .box-text img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+}
+
+/*-我去誰家-*/
+#crumb{}
+#crumb .box-text{}
+#crumb .box-text ul:after {
+	content: " ";
+	display: block;
+	height: 0px;
+	clear: both;
+	overflow: hidden;
+}
+#crumb .box-text li {
+	float: left;
+	padding:5px;
+	background: none;
+}
+#crumb .box-text img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+}
+
+/*-好友列表-*/
+#friendbox{}
+#friendbox.box-text{}
+#friendbox .box-text ul:after {
+	content: " ";
+	display: block;
+	height: 0px;
+	clear: both;
+	overflow: hidden;
+}
+#friendbox .box-text li {
+	float: left;
+	padding:5px;
+	background: none;
+}
+#friendbox .box-text img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+	border: 0px;
+}
+#friendbox .box-text a{
+	border: 0px;
+}
+
+
+/*文章分類*/
+#category h6{
+	padding: 7px 0 3px 0;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ 頁尾 */
+#footer{
+	padding: 10px 30px 10px 30px;
+	clear: both;
+	background: #000;
+	color: #ffffff;
+	margin-top: 30px;
+}
+#footer a{
+	color: #ffffff;
+}
+#footer a:hover{
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+#footer #bottom:before{
+	padding: 10px 0px;
+	display: block;
+	text-align: center;
+	content: "Copyright © CSS designed by Wei @ Dribs & Drabs, http://www.dribs-drabs.com/blog";
+}
+#footer #bottom{
+	padding: 10px 0px;
+	text-align: center;
+}
+
+
+
 
 </body>
 </html> 
