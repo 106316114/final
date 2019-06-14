@@ -11,20 +11,18 @@
 
 <div style="text-align:center;"><h1><font face="fantasy">With My Life</font></h1></div>
 <form action="/somewhere/to/upload" enctype="multipart/form-data">
-   <input type="file" id="progressbarTWInput" accept="image/gif, image/jpeg, image/png"/ >
+   <input type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img" accept="image/gif, image/jpeg, image/png"/ >
    <img id="preview_progressbarTW_img" src="#" />
 </form>
 <!-- JavaScript part -->
 <script>
-$("#progressbarTWInput").change(function(){
-  readURL(this);
-});
- 
-function readURL(input){
+function readURL(input){ 
   if(input.files && input.files[0]){
+    var imageTagID = input.getAttribute("targetID");
     var reader = new FileReader();
     reader.onload = function (e) {
-       $("#preview_progressbarTW_img").attr('src', e.target.result);
+       var img = document.getElementById(imageTagID);
+       img.setAttribute("src", e.target.result)
     }
     reader.readAsDataURL(input.files[0]);
   }
