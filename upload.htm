@@ -3,11 +3,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Share my photo</title>
-      
+<script>
+  function sure() {
+var json = [{"name": "daily", "peo": "我" , "time": "18-06-15","location":"學校","descrip":"打程式難不難"}];
+var forTable = document.querySelector( ".for-table tbody" );
+var jsonSum = json.length;
+for (var i = 0; i < jsonSum; i++) {
+    forTable.innerHTML += 
+        "<tr>" +
+           "<td>" + json[i].name + "</td>" +
+            "<td>" + json[i].peo + "</td>" +
+           "<td>" + json[i].time + "</td>" +
+            "<td>" + json[i].location + "</td>" +
+            "<td>" + json[i].descrip + "</td>" +
+        "</tr>";
+}      
+  }
+<p>已將以上內容上傳!</p>
+</script>      
 </head>
 <body style="background-image:url('https://uploadfile.bizhizu.cn/2014/0211/20140211050207353.gif.source.jpg');background-repeat:x;background-repeat:y;">
 <br>
-<div style="text-align:center;"><h1><font face="fantasy" font-size:28px;>Share my APP</font></h1></div>
+<div style="text-align:center;"><h1><font face="fantasy" font-size:28px;>Share my photo</font></h1></div>
 <A Name="06"></A>
 <center>
 <br><br><br>
@@ -19,12 +36,10 @@
     </div>
 </form>
 照片名稱: <input type="text" ALIGN="LEFT" SIZE=10 id="photo" name="photoname" value=""><br>
-亮度: <input type="text" ALIGN="LEFT" SIZE=10 id="bright" name="bright1" value=""><br>
-對比:<input type="text" ALIGN="LEFT" SIZE=10 id="contrast" name="contrast1" value=""><br>
-淡化::<input type="text" ALIGN="LEFT" SIZE=10 id="fade" name="fade1" value=""><br>
-銳化:<input type="text" ALIGN="LEFT" SIZE=10 id="strenth" name="strenth1" value=""><br>
-飽和度:<input type="text" ALIGN="LEFT" SIZE=10 id="full" name="full1" value=""><br>
-暖色調節:<input type="text" ALIGN="LEFT" SIZE=10 id="warm" name="warm" value=""><br><br><br>
+人物: <input type="text" ALIGN="LEFT" SIZE=10 id="peo" name="peo1" value=""><br>
+時間:<input type="text" ALIGN="LEFT" SIZE=10 id="time" name="time1" value=""><br>
+地點:<input type="text" ALIGN="LEFT" SIZE=10 id="location" name="location1" value=""><br>
+描述:<input type="text" ALIGN="LEFT" SIZE=10 id="descrip" name="descrip1" value=""><br>
 
 <input id="sure1" onclick="sure();" type="button" value="確認" />
 
