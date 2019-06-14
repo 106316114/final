@@ -3,7 +3,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Share my APP</title>
-      
+<script>
+
+  function look() {
+var json = [{"name": "foodie", "user": "android" , "pay": "是","score":"4","reson":"簡易"},
+            {"name": "snapeed", "user": "ios" , "pay": "是","score":"4.5","reson":"調色專業"}];
+  
+var forTable = document.querySelector( ".for-table tbody" );
+var jsonSum = json.length;
+ 
+for (var i = 0; i < jsonSum; i++) {
+    forTable.innerHTML += 
+        "<tr>" +
+            "<td>" + json[i].name + "</td>" +
+            "<td>" + json[i].user + "</td>" +
+            "<td>" + json[i].pay + "</td>" +
+            "<td>" + json[i].score + "</td>" +
+            "<td>" + json[i].reson + "</td>" +
+        "</tr>";
+}      
+</script>
 </head>
 <body style="background-image:url('https://uploadfile.bizhizu.cn/2014/0211/20140211050207353.gif.source.jpg');background-repeat:x;background-repeat:y;">
 <br>
@@ -18,7 +37,20 @@ APP名稱: <input type="text" ALIGN="LEFT" SIZE=10 id="app" name="appname" value
 推薦原因:<br>
 <textarea style="width:250px;height:70px;" ALIGN="left" id="reason"></textarea><br><br><br>
 <input id="sure1" onclick="sure();" type="button" value="確認" />
-<input id="look1" onclick="look();" type="button" value="觀看推薦" />  
+<input id="look1" onclick="look();" type="button" value="觀看推薦" />  <br><br>
+<table class="for-table">
+<thead>
+<tr>
+<th>APP名稱</th>
+<th>服務用戶</th>
+<th>是否免費</th>
+<th>推薦指數</th>
+<th>推薦原因</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 </center>
 </body>
 </html> 
