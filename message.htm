@@ -60,7 +60,7 @@
                                 <img src="https://www.gravatar.com/avatar/c4ca4238a0b923820dcc509a6f75849b?s=48&d=identicon" style="border: 1px solid #ccc" />
                             </td>
                             <td style="color: #555; font-size: 13px">
-                                <a href="/cdn-cgi/l/email-protection#88b9">1</a> wrote on June 14th, 2019                            </td>
+                                <a href="/cdn-cgi/l/email-protection#b081">1</a> wrote on June 14th, 2019                            </td>
                         </tr>
                         <tr>
                             <td style="width: 100%">
@@ -90,22 +90,37 @@
                     <div class="form-group">
                         <div id="btcheck"></div>
                     </div>
-                    <input type="submit"  value="Post My Message" />
+                    <input type="submit"  value="Post My Message"  />
                 </form>
 
             </div>
         </div>
         
         <div id="footer">
-
+            <a href="/tools/guestbook">Get Your Own Free Guestbook Hosted by Website Goodies</a>.
             &nbsp;
+            <!-- Begin W3Counter Tracking Code -->
             <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="http://www.w3counter.com/tracker.js"></script>
             <script type="text/javascript">w3counter(14325);</script>
             <noscript><a href="http://www.w3counter.com"><img src="http://www.w3counter.com/tracker.php?id=14325" style="border: 0" alt="W3Counter" /></a></noscript>
-           
+            <!-- End W3Counter Tracking Code-->
         </div>
 
-       
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+        <script type="text/javascript">
+        function verifyCallback(response) {
+            $('input[name="btcheck"]').val(response);
+            $('input[type="submit"]').removeAttr('disabled');
+        }
+        var onloadCallback = function() {
+            grecaptcha.render('btcheck', {
+                'sitekey' : '6Lf3xwgTAAAAAPA5yQmODTM5EMlkOgUkTKh2dRbL',
+                'callback' : verifyCallback,
+                'theme' : 'light'
+            });
+        }
+        </script>
 
     </body>
 </html>
+
