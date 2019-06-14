@@ -10,19 +10,30 @@
 <body>
 
 <div style="text-align:center;"><h1><font face="fantasy">With My Life</font></h1></div>
-<!--上傳圖片的按鈕-->
-<input id="file" type="file"/>
-
-<!--預覽區塊-->
-<img id="demo"/>
-$('#file').change(function() {
-  var file = $('#file')[0].files[0];
-  var reader = new FileReader;
-  reader.onload = function(e) {
-    $('#demo').attr('src', e.target.result);
-  };
-  reader.readAsDataURL(file);
-});   
-
+var fileList = this.files;
+        for(var i = 0; i < fileList.length; i++) {
+            var imgSrcI = getObjectURL(fileList[i]);
+            imgName.push(fileList[i].name);
+            imgSrc.push(imgSrcI);
+            imgFile.push(fileList[i]);
+        }
+function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
+function addNewContent(obj) {
+    $(obj).html("");
+    for(var a = 0; a < imgSrc.length; a++) {
+        var oldBox = $(obj).html();
+        $(obj).html(oldBox + '<li class="content-img-list-item"><img src="'+imgSrc[a]+'" alt=""><a index="'+a+'" class="hide delete-btn"><i class="ico-delete"></i></a></li>');
+    }
+}
 </body>
 </html> 
