@@ -8,47 +8,17 @@
 </head>
 <body>
 <div style="text-align:center;"><h1><font face="fantasy">With My Life</font></h1></div>
-<!-- JavaScript & jQuery 版本-->
-<!-- HTML part -->
-<form action="/somewhere/to/upload" enctype="multipart/form-data">
-   <input type="file" id="progressbarTWInput" accept="image/gif, image/jpeg, image/png"/ >
-   <img id="preview_progressbarTW_img" src="#" />
-</form>
-<!-- JavaScript part -->
-<script>
-$("#progressbarTWInput").change(function(){
-  readURL(this);
-});
- 
-function readURL(input){
-  if(input.files && input.files[0]){
-    var reader = new FileReader();
-    reader.onload = function (e) {
-       $("#preview_progressbarTW_img").attr('src', e.target.result);
-    }
-    reader.readAsDataURL(input.files[0]);
-  }
+<img id="preview_img" alt="empty preview">
+<input type="file" id="uploader">
+var reader = new FileReader();
+
+reader.onload = function(e) {
+    $("#preview_img").attr("src", e.target.result);
 }
-</script>
- <!-- 純 JavaScript 版本-->
-<!-- HTML part -->
-<form action="/somewhere/to/upload" enctype="multipart/form-data">
-   <input type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img" accept="image/gif, image/jpeg, image/png"/ >
-   <img id="preview_progressbarTW_img" src="#" />
-</form>
-<!-- JavaScript part -->
-<script>
-function readURL(input){ 
-  if(input.files && input.files[0]){
-    var imageTagID = input.getAttribute("targetID");
-    var reader = new FileReader();
-    reader.onload = function (e) {
-       var img = document.getElementById(imageTagID);
-       img.setAttribute("src", e.target.result)
-    }
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-</script>
+
+$("#uploader").change(function() {
+    var upload_file = $("#uploader")[0].files[0];
+    reader.readAsDataURL(upload_file);
+})
 </body>
 </html> 
