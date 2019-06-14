@@ -10,14 +10,26 @@
 <body>
 
 <div style="text-align:center;"><h1><font face="fantasy">With My Life</font></h1></div>
-<div class="content-img">
-            <ul class="content-img-list">
-                <!-- <li class="content-img-list-item"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""><a class="delete-btn"><i class="ico-delete"></i></a></li> -->
-            </ul>
-            <div class="file">
-                <i class="ico-plus"></i>上傳圖片，支持jpg/png<input type="file" name="file" accept="image/*" id="upload" >
-            </div>  
-        </div>
+<form action="/somewhere/to/upload" enctype="multipart/form-data">
+   <input type="file" id="progressbarTWInput" accept="image/gif, image/jpeg, image/png"/ >
+   <img id="preview_progressbarTW_img" src="#" />
+</form>
+<!-- JavaScript part -->
+<script>
+$("#progressbarTWInput").change(function(){
+  readURL(this);
+});
+ 
+function readURL(input){
+  if(input.files && input.files[0]){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+       $("#preview_progressbarTW_img").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+</script>
 
 </body>
 </html> 
