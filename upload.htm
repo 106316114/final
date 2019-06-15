@@ -19,9 +19,7 @@ for (var i = 0; i < jsonSum; i++) {
             "<td>" + json[i].descrip + "</td>" +
         "</tr>";
 }      
-  }
-<p>已將以上內容上傳!</p>
-var x = document.getElementById("photo").value ;
+    var x = document.getElementById("photo").value ;
     if (x==''||x.value=="null") 
     {
       alert("照片名稱必須填寫!");
@@ -41,6 +39,9 @@ var y = document.getElementById("peo").value ;
     {
       alert("地點必須填寫!");
     }
+  }
+<p>已將以上內容上傳!</p>
+
 </script>      
 </head>
 <body style="background-image:url('https://uploadfile.bizhizu.cn/2014/0211/20140211050207353.gif.source.jpg');background-repeat:x;background-repeat:y;">
@@ -60,7 +61,7 @@ var y = document.getElementById("peo").value ;
 人物: <input type="text" ALIGN="LEFT" SIZE=10 id="peo" name="peo1" value=""><br>
 時間:<input type="text" ALIGN="LEFT" SIZE=10 id="time" name="time1" value=""><br>
 地點:<input type="text" ALIGN="LEFT" SIZE=10 id="location" name="location1" value=""><br>
-描述:<input type="text" ALIGN="LEFT" SIZE=10 id="descrip" name="descrip1" value=""><br>
+描述:<input type="text" ALIGN="LEFT" SIZE=10 id="descrip" name="descrip1" value=""><br><br>
 
 <input id="sure1" onclick="sure();" type="button" value="確認" />
 
